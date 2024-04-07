@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>选择器 | CSS</title>
+  <link rel="stylesheet" href="../assets/styles/global.css">
+</head>
+
+<body>
+  <h1>选择器</h1>
+  <ul>
+    <li><a href="#basic-selector">基本选择器</a></li>
+    <li><a href="#attribute-selector">属性选择器</a></li>
+    <li><a href="#pseudo-classes-selector">伪类选择器</a></li>
+    <li><a href="#form-pseudo-classes-selector">表单伪类选择器</a></li>
+  </ul>
+
+  <!-- 基本选择器 -->
+  <h2 id="basic-selector">基本选择器</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>选择器</th>
+        <th>示例</th>
+        <th>描述</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>*</td>
+        <td>*</td>
+        <td>选择所有元素</td>
+      </tr>
+      <tr>
+        <td>#id</td>
+        <td>#title</td>
+        <td>选择 id="title" 的所有元素</td>
+      </tr>
+      <tr>
+        <td>.class</td>
+        <td>.introduction</td>
+        <td>所有 class="introduction" 的元素</td>
+      </tr>
+      <tr>
+        <td>element</td>
+        <td>p</td>
+        <td>选择所有 p 元素</td>
+      </tr>
+      <tr>
+        <td>element,element</td>
+        <td>div, p</td>
+        <td>选择所有 div 和 p 元素</td>
+      </tr>
+      <tr>
+        <td>element element</td>
+        <td>div p</td>
+        <td>选择 div 子元素（包含孙子元素）中的所有 p 元素</td>
+      </tr>
+      <tr>
+        <td>element>element</td>
+        <td>div>p</td>
+        <td>选择父元素为 div 元素的所有 p 元素 （子元素）</td>
+      </tr>
+      <tr>
+        <td>element+element</td>
+        <td>div+p</td>
+        <td>选择紧接在 div 元素之后的 p 元素</td>
+      </tr>
+      <tr>
+        <td>element~element</td>
+        <td>p~ul</td>
+        <td>选择和 p 元素同级并且在 p 元素之后的 ul 元素</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 属性选择器 -->
+  <h2 id="attribute-selector">属性选择器</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>选择器</th>
+        <th>示例</th>
+        <th>描述</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>[attribute]</td>
+        <td>a[target]</td>
+        <td>带有 target 属性的所有 a 元素</td>
+      </tr>
+      <tr>
+        <td>[attribute=value]</td>
+        <td>a[target="_blank"]</td>
+        <td>target 属性等于 "_blank" 的所有 a 元素</td>
+      </tr>
+      <tr>
+        <td>[attribute~=value]</td>
+        <td>a[class~="hello"]</td>
+        <td>class 属性包含 "hello" 单词的所有 a 元素，例如：
+          <pre>&lt;a class="hello world"&gt;点击跳转&lt/a&gt;</pre>
+        </td>
+      </tr>
+      <tr>
+        <td>[attribute|=value]</td>
+        <td>a[target|="hello"]</td>
+        <td>target 属性为 hello 或者 hello-* 所有 a 元素</td>
+      </tr>
+      <tr>
+        <td>[attribute*=value]</td>
+        <td>a[href*="example"]</td>
+        <td>href 属性值包含 "example" 字符串的所有 a 元素, 例如：
+          <pre>&lt;a href="https://www.exmaple.com"&gt;点击跳转&lt/a&gt;</pre>
+        </td>
+      </tr>
+      <tr>
+        <td>[attribute^=value]</td>
+        <td>a[href*="https"]</td>
+        <td>href 属性值以 "https" 字符串的开头的所有 a 元素, 例如：
+          <pre>&lt;a href="https://www.exmaple.com"&gt;点击跳转&lt/a&gt;</pre>
+        </td>
+      </tr>
+      <tr>
+        <td>[attribute$=value]</td>
+        <td>a[href$=".com"]</td>
+        <td>href 属性值以 ".com" 字符串的结尾的所有 a 元素, 例如：
+          <pre>&lt;a href="https://www.exmaple.com"&gt;点击跳转&lt/a&gt;</pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 伪类选择器 -->
+  <h2 id="pseudo-classes-selector">伪类选择器</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>状态</th>
+        <th>示例</th>
+        <th>说明</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>:link</td>
+        <td>a:link</td>
+        <td>选择未被访问的链接</td>
+      </tr>
+      <tr>
+        <td>:visited</td>
+        <td>a:visited</td>
+        <td>选择已被访问的链接</td>
+      </tr>
+      <tr>
+        <td>:hover</td>
+        <td>a:hover</td>
+        <td>鼠标移动到元素上时</td>
+      </tr>
+      <tr>
+        <td>:active</td>
+        <td>a:active</td>
+        <td>点击正在发生时</td>
+      </tr>
+      <tr>
+        <td>:focus</td>
+        <td>input:focus</td>
+        <td>选择正在获取焦点的元素</td>
+      </tr>
+      <tr>
+        <td>:root</td>
+        <td>:root</td>
+        <td>选择文档的根元素，即 html 元素，可以用于设置全局 css 变量，或者应用全局样式</td>
+      </tr>
+      <tr>
+        <td>:empty</td>
+        <td>div:empty</td>
+        <td>用于选择<b>没有子元素</b>的元素</td>
+      </tr>
+      <tr>
+        <td>:target</td>
+        <td>div:target</td>
+        <td>用于访问锚点目标元素(要访问锚点才会显示)</td>
+      </tr>
+      <tr>
+        <td>:first-child</td>
+        <td>p:first-child</td>
+        <td>选择所有父元素的第一个子元素的所有的p元素</td>
+      </tr>
+      <tr>
+        <td>:last-child</td>
+        <td>p:last-child</td>
+        <td>选择所有父元素的最后一个子元素的所有的p元素</td>
+      </tr>
+      <tr>
+        <td>:first-of-type</td>
+        <td>p:first-of-type</td>
+        <td>选择所有父元素的首个p元素的每个p元素</td>
+      </tr>
+      <tr>
+        <td>:last-of-type</td>
+        <td>p:last-of-type</td>
+        <td>选择所有父元素的最后p元素的每个p元素</td>
+      </tr>
+      <tr>
+        <td>:only-of-type</td>
+        <td>p:only-of-type</td>
+        <td>选择所有父元素的唯一的p元素的每个p元素</td>
+      </tr>
+      <tr>
+        <td>:only-child</td>
+        <td>p:only-child</td>
+        <td>选择所有父元素的唯一元素的每个p元素</td>
+      </tr>
+      <tr>
+        <td>:nth-child(n)</td>
+        <td>p:nth-child(2)</td>
+        <td>选择所有父元素的第二个子元素的每个p元素</td>
+      </tr>
+      <tr>
+        <td>:nth-last-child(n)</td>
+        <td>p:nth-last-child(2)</td>
+        <td>同 nth-child(n) 从最后一个开始计数</td>
+      </tr>
+      <tr>
+        <td>:nth-child(odd)</td>
+        <td>p:nth-child(odd)</td>
+        <td>选择所有父元素的奇数p元素</td>
+      </tr>
+      <tr>
+        <td>:nth-child(even)</td>
+        <td>p:nth-child(even)</td>
+        <td>选择所有父元素的偶数p元素</td>
+      </tr>
+      <tr>
+        <td>:nth-of-type(n)</td>
+        <td>p:nth-of-type(2)</td>
+        <td>选择所有父元素的第二个p元素的每个p元素</td>
+      </tr>
+      <tr>
+        <td>:nth-last-of-type(n)</td>
+        <td>p:nth-last-of-type(2)</td>
+        <td>同 nth-of-type(n) 从最后一个开始计数</td>
+      </tr>
+      <tr>
+        <td>:not(selector)</td>
+        <td>:not(p)</td>
+        <td>选择非p元素的所有元素</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 表单伪类 -->
+  <h2 id="form-pseudo-classes-selector">表单伪类选择器</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>状态</th>
+        <th>示例</th>
+        <th>说明</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>:enabled</td>
+        <td>input:enabled</td>
+        <td>选择每个启用的 input 元素</td>
+      </tr>
+      <tr>
+        <td>:disabled</td>
+        <td>input:disabled</td>
+        <td>选择每个禁用的 input 元素</td>
+      </tr>
+      <tr>
+        <td>:checked</td>
+        <td>input:checked</td>
+        <td>选择每个被选中的 input 元素</td>
+      </tr>
+      <tr>
+        <td>:required</td>
+        <td>input:required</td>
+        <td>包含 required 属性的 input 元素</td>
+      </tr>
+      <tr>
+        <td>:optional</td>
+        <td>input:optional</td>
+        <td>不包含 required 属性的 input 元素</td>
+      </tr>
+      <tr>
+        <td>:valid</td>
+        <td>input:valid</td>
+        <td>验证通过的表单元素</td>
+      </tr>
+      <tr>
+        <td>:invalid</td>
+        <td>input:invalid</td>
+        <td>验证不通过的表单元素</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>
